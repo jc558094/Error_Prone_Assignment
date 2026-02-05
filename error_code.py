@@ -2,7 +2,8 @@
 # Use what you know about Python to fix them
 
 import random
-from error_code_function import combat, createMonster  
+from error_code_functions import combat, create_monster  
+
 
 char_name = input("Please enter a character name:\n")
 char_class = 0
@@ -87,7 +88,7 @@ while True:
                 print("\nThe fight drags on... neither side can land a clean hit.")
                 print("You break away and retreat before this becomes your whole personality.")
         elif monster["health"] > 0:
-            print(f"You were slain by the {monster["name"]}!") 
+            print(f"You were slain by the {monster[__name__]}!") 
             print("Your vision fades. The dungeon claims another hero.")
             break
         else:
@@ -97,14 +98,14 @@ while True:
                 )
             print(f"You were victorious! You gain {gold} gold!")
         
-            char_class = char_class["gold"] + gold
+            char_class["gold"] = char_class["gold"] + gold
 
-            print(f"TOTAL GOLD: {char_class['gold']}") 
+            print(f"TOTAL GOLD: {char_class['gold']}")
 
     elif choice == "Search" or choice == "2":
         did_find = random.randint(1,100)
 
-        if did_find < char_class["Luck"]:
+        if did_find < char_class["luck"]:
             found_item = random.choice(items) 
             char_class["inventory"].append(found_item)
             print(f"You search the area... and find a {found_item}!")

@@ -6,13 +6,13 @@ def combat(p1, p2):
     print(f"\n{initiative} acts!")
     if initiative == p1["name"]:
         if p1["attack"] + attack >= p2["defense"]:
-            p2["health"] - p1["damage"]  
+            p2["health"] -= p1["damage"]  
             print(f"{p1['name']} lands a hit for {p1['damage']} damage!")
         else:
             print(f"{p1['name']} swings... and misses!")
     else:
         if p2["attack"] + attack >= p1["defense"]:
-            p1["health"] - p2["damage"] 
+            p1["health"] -= p2["damage"] 
             print(f"The {p2['name']} strikes you for {p2['damage']} damage!")
         else:
             print(f"The {p2['name']} attacks... but you dodge it!")
